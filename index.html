@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Guardias De Marozzo</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.7/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.7/brython_stdlib.min.js"></script>
+    <style>
+        .becha {
+            font-size: 14px;
+            color:rgb(42, 18, 133);
+            border-color:lightsteelblue;
+            background-color:lightcyan;
+            border-style: ridge;
+        }
+
+        .postas {
+            font-size: 14px;
+            font-family: monospace;
+            color:rgb(7, 48, 228);
+            border-color:lightblue;
+            border-style: ridge;
+            background-color: rgb(210, 231, 250);
+        }
+
+        .codas {
+            font-size: 14px;
+            font-family: 'Ubuntu';
+            color:rgb(14, 28, 151);
+            border-style: ridge;
+            background-color:rgb(200, 237, 241);
+            border-color:rgb(141, 206, 206);
+        }
+
+        .cinghiaras {
+            font-size: 14px;
+            font-family: 'Ubuntu';
+            color:rgb(6, 36, 100);
+            border-style: ridge;
+            background-color:rgb(193, 255, 249);
+            border-color:rgb(182, 228, 223);
+        }
+
+        .largo_passo {
+            font-size: 14px;
+            font-family: monospace;
+            color:rgb(18, 131, 33);
+            border-style: ridge;
+            background-color: rgb(157, 243, 149);
+            border-color:rgb(171, 231, 156);
+        }
+
+        .ferro {
+            font-size: 14px;
+            font-family: monospace;
+            color:rgb(36, 92, 3);
+            border-style: ridge;
+            background-color:rgb(131, 219, 120);
+            border-color:rgb(168, 231, 152);
+        }
+    </style>
+</head>
+
+
+<body onload="brython()">
+    <h1>Guardias De Marozzo</h1>
+    <p>Guardias de dos Manos:</p>
+    <ul>
+    <li><input type='button' id='img1txt1' value='Becha Cesa' class='becha'/></li>
+    <li><input type='button' id='img2txt2' value='Becha Possa' class='becha'/></li>
+    <li><input type='button' id='img3txt3' value='Croce' class='postas'/></li>
+    <li><input type='button' id='img4txt4' value='Coda Longa e Alta' class='codas'/></li>
+    <li><input type='button' id='img5txt5' value='Coda Longa e Distesa' class='codas'/></li>
+    <li><input type='button' id='img6txt6' value='Coda Longa e Larga' class='codas'/></li>
+    <li><input type='button' id='img7txt7' value='Coda Longa e Stretta' class='codas'/></li>
+    <li><input type='button' id='img8txt8' value='Cinghiara Porta di Ferro Alta' class='cinghiaras'/></li>
+    <li><input type='button' id='img9txt9' value='Cinghiara Porta di Ferro Larga' class='cinghiaras'/></li>
+    <li><input type='button' id='img10txt10' value='Cinghiara Porta di Ferro Stretta' class='cinghiaras'/></li>
+    <li><input type='button' id='img11txt11' value='Facia' class='postas'/></li>
+    <li><input type='button' id='img12txt12' value='Fianche' class='postas'/></li>
+    <li><input type='button' id='img13txt13' value='Dintrare Non in Largo Passo' class='largo_passo'/></li>
+    <li><input type='button' id='img14txt14' value='Intrare in Largo Passo' class='largo_passo'/></li>
+    <li><input type='button' id='img15txt15' value='Porta di Ferro Alta' class='ferro'/></li>
+    <li><input type='button' id='img16txt16' value='Porta di Ferro Larga' class='ferro'/></li>
+    <li><input type='button' id='img17txt17' value='Porta di Ferro Stretta' class='ferro'/></li>
+    <li><input type='button' id='img18txt18' value='Testa' class='postas'/></li>
+    </ul>
+
+    <div id='imagen'></div>
+
+    <script type="text/python">
+        import random
+        from browser import document
+        from browser import bind
+        from browser import alert
+
+        @bind(document['img1txt1'], 'click')
+        def becha_cesa(e):
+            document['imagen'].html = "<img src='bc - Becha Cesa.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img2txt2'], 'click')
+        def becha_possa(e):
+            document['imagen'].html = "<img src='bp - Becha Possa.jpg' style='max-height: 500px; max-width: 400px' />"        
+
+        @bind(document['img3txt3'], 'click')
+        def croce(e):
+            document['imagen'].html = "<img src='c - Croce.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img4txt4'], 'click')
+        def coda_longa_e_alta(e):
+            document['imagen'].html = "<img src='cla - Coda Longa e Alta.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img5txt5'], 'click')
+        def longa_e_distesa(e):
+            document['imagen'].html = "<img src='cld - coda_longa_distesa.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img6txt6'], 'click')
+        def coda_longa_e_larga(e):
+            document['imagen'].html = "<img src='cll - Coda Longa e Larga.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img7txt7'], 'click')
+        def coda_longa_e_stretta(e):
+            document['imagen'].html = "<img src='cls - Coda Longa e Stretta.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img8txt8'], 'click')
+        def cinghiara_porta_di_ferro_alta(e):
+            document['imagen'].html = "<img src='cpfa - Cinghiara Porta di Ferro Alta.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img9txt9'], 'click')
+        def cinghiara_porta_di_ferro_larga(e):
+            document['imagen'].html = "<img src='cpfl - Cinghiara Porta di Ferro Larga.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img10txt10'], 'click')
+        def cinghiara_porta_di_ferro_stretta(e):
+            document['imagen'].html = "<img src='cpfs - Cinghiara Porta di Ferro Stretta.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img11txt11'], 'click')
+        def alta_facia_xd(e):
+            document['imagen'].html = "<img src='fa - Facia.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img12txt12'], 'click')
+        def fianche(e):
+            document['imagen'].html = "<img src='fi - Fianche.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img13txt13'], 'click')
+        def dintrare_non_in_largo_passo(e):
+            document['imagen'].html = "<img src='inpl - Dintrare Non in Largo Passo.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img14txt14'], 'click')
+        def intrare_in_largo_passo(e):
+            document['imagen'].html = "<img src='ipl - Intrare in Largo Passo.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img15txt15'], 'click')
+        def ferro_alta(e):
+            document['imagen'].html = "<img src='pfa-Ferro Alta.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img16txt16'], 'click')
+        def porta_di_ferro_larga(e):
+            document['imagen'].html = "<img src='pfl - Porta di Ferro Larga.jpg' style='max-height: 500px; max-width: 400px' />"
+
+        @bind(document['img17txt17'], 'click')
+        def porta_di_ferro_stretta(e):
+            document['imagen'].html = "<img src='pfs - Porta di Ferro Stretta.jpg' style='max-height: 500px; max-width: 400px'/>"
+
+        @bind(document['img18txt18'], 'click')
+        def testa(e):
+            document['imagen'].html = "<img src='t - Testa.jpg' style='max-height: 500px; max-width: 400px'/>"
+
+    </script>
+</body>
+</html>
